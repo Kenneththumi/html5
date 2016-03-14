@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+	<!-- header section -->
+   <HEAD>
+   	  <!-- This is the page title -->
+      <TITLE>My first HTML document</TITLE>
+      
+   </HEAD>
+   <!-- body section -->
+   <body background="unknown.jpg">
+   	<div style="margin:50px auto; border-radius:5px; width:500px; height:auto">
+   		<!-- display header in h1 style -->
+   		<h1>HTML/HTML5</h1><hr/>
+   		<!-- this displays a paragraph -->
+      <P>This is a paragraph</p>
+      	<hr/>
+      	<!-- this displays an important text using strong tags -->
+      <strong>Strong text</strong>
+      <hr/>
+      <!-- form section -->
+      <form action="" method="post">
+           <caption>Form</caption><br/>
+           Name:<input type="text" placeholder="Enter text" required=""><br/><br/>
+           Number:<input type="number" placeholder="Enter Number" required=""><br/><br/>
+           Email:<input type="email" placeholder="Enter email" required=""><br/><br/>
+           <!-- uploading files -->
+           Upload:<input type="file" required=""><br/><br/>
+           <!-- select an option from category -->
+           Select<select placeholder="Select an option" required="">
+              <option>Option A</option>
+              <option>Option B</option>
+              <option>Option C</option>
+              <option>Option C</option>
+           </select><br/><br/>
+           <input type="submit" placeholder="Enter text" value="Submit Button"/><br/>
+      </form>
+      <hr/>
+      <h4>Ordered List</h4>
+      <!-- numbered list -->
+      <ol>
+          <li>Orange</li>
+          <li>Apple</li>
+          <li>pineapple</li>
+      </ol>
+ 
+  <hr/>
+  <h4>Un-ordered list</h4>
+  <!-- list with no numbers :have bullets and disks  -->
+      <ul>
+          <li>Orange</li>
+          <li>Apple</li>
+          <li>Matunda</li>
+      </ul>
+      <hr/>
+      <h4>Table</h4>
+      <!-- table section -->
+      <table border="1">
+<thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Town</th>
+            </tr>
+       </thead>
+<tbody>
+            <tr>
+                  <td>Bruno</td>
+                  <td>NRB</td>
+            </tr>
+</tbody>
+        <tfoot>
+              <tr>
+                  <td>Kelvin</td>
+                  <td>NYR</td>
+            </tr>
+        </tfoot>
+</table>
+<hr/>
+<!-- location API to display location -->
+<p>Google API to display my coordinates.</p>
+
+<!-- clicking invokes the function to display the coordinates -->
+<button onclick="getLocation()">Click</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;	
+}
+</script>
+<hr>
+<!-- location API to display location -->
+<!-- This div displays content stored by the API onload-->
+<div><h3 id="result"></h3></div>
+
+<script>
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("name", "This content is stored locally by storage API");
+    // Retrieve
+    document.getElementById("result").innerHTML = localStorage.getItem("name");
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+</script>
+</div>
+   </body>
+</HTML>
