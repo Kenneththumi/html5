@@ -1,0 +1,105 @@
+
+/**
+ * Cytonn Technologies
+ *
+ * @author: Kenneth Thumi <kthumi@cytonn.com>
+ *
+ * Project: code samples
+ *
+ */
+/* import styles from _add.scss(partail)*/
+@import 'add';
+/*declaring variables*/
+$primary-color: #333;
+$ht: 500px;
+$wd: 700px;
+$bg: #eee;
+$font-stack: 'arial';
+$g: #666;
+$gg: #333;
+body{
+      background: red; /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(top,$g, $gg); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(bottom,$g, $gg); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(bottom,$g, $gg); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(bottom,$g, $gg);
+      padding: 20px;
+       /* Standard syntax (must be last) */
+}
+#bg {
+  font: $font-stack;  /*getting the font propety value from the variable*/
+  color: $primary-color;   /*getting the color propety value from the variable*/
+  width:$wd;               /*getting the size propety value from the variable*/
+  /*height: $ht;  */           /*getting the font propety value from the variable*/
+  background-color: $bg;
+  margin-top: 50px;
+}
+/* style for inheriting */
+.centered{
+      margin-left: auto;
+      margin-right: auto; 
+    }
+/*nested css(also extends above class )*/
+.nav {
+  width:100%;
+  ul{
+    width: 350px;
+    @extend .centered;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { 
+       display: inline-block;
+       margin-top: 10px;
+       padding: 10px 5px;
+       background-color: #666;
+       color: $bg;
+   }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: black;
+  }
+
+}
+/* mixin ,inheritance properties , and use of functions*/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin box-shadow($x,$y){
+     -webkit-box-shadow: $x $y;
+       -moz-box-shadow: $x $y;
+       -ms-box-shadow: $x $y;
+       box-shadow: $x $y;
+}
+
+.box { 
+  @extend .centered;
+  @include border-radius(5px);
+  @include box-shadow(3px,3px);
+   }
+/* nested */
+.box2{
+   @extend .centered;
+   width: 400px;
+   height: auto;
+   padding: 20px;
+   .t1{
+       background-color: #444;
+       color: $bg;
+       margin-bottom: 2px;
+       @include border-radius(5px);
+       padding: 5px;
+       h5{
+           font-style: italic;
+       }
+   }
+}
+
+

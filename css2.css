@@ -1,0 +1,95 @@
+/**
+ * Cytonn Technologies
+ *
+ * @author: Kenneth Thumi <kthumi@cytonn.com>
+ *
+ * Project: code samples
+ *
+ */
+/* import styles from _add.scss(partail)*/
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0; }
+
+/*declaring variables*/
+body {
+  background: red;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(top, #666, #333);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, #666, #333);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, #666, #333);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(bottom, #666, #333);
+  padding: 20px;
+  /* Standard syntax (must be last) */ }
+
+#bg {
+  font: "arial";
+  /*getting the font propety value from the variable*/
+  color: #333;
+  /*getting the color propety value from the variable*/
+  width: 700px;
+  /*getting the size propety value from the variable*/
+  /*height: $ht;  */
+  /*getting the font propety value from the variable*/
+  background-color: #eee;
+  margin-top: 50px; }
+
+/* style for inheriting */
+.centered, .nav ul, .box, .box2 {
+  margin-left: auto;
+  margin-right: auto; }
+
+/*nested css(also extends above class )*/
+.nav {
+  width: 100%; }
+  .nav ul {
+    width: 350px;
+    padding: 0;
+    list-style: none; }
+  .nav li {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 5px;
+    background-color: #666;
+    color: #eee; }
+  .nav a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: black; }
+
+/* mixin ,inheritance properties , and use of functions*/
+.box {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 3px;
+  -moz-box-shadow: 3px 3px;
+  -ms-box-shadow: 3px 3px;
+  box-shadow: 3px 3px; }
+
+/* nested */
+.box2 {
+  width: 400px;
+  height: auto;
+  padding: 20px; }
+  .box2 .t1 {
+    background-color: #444;
+    color: #eee;
+    margin-bottom: 2px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px; }
+    .box2 .t1 h5 {
+      font-style: italic; }
+
+/*# sourceMappingURL=css2.css.map */
